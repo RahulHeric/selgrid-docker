@@ -31,7 +31,7 @@ public class FirefoxTest {
 
  @Test
  public void f() {
-	  System.out.println("title of page : "+driver.getTitle());
+	  System.out.println("title of page: "+driver.getTitle());
  }
 @Test
 public void f2() {
