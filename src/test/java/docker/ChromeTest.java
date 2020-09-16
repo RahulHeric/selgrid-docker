@@ -8,9 +8,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -31,7 +28,7 @@ public class ChromeTest {
 	  
 	        driver=new RemoteWebDriver(url,cop);
 	        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-	        
+	        System.out.println(driver.toString());
 	        driver.get("https://opensource-demo.orangehrmlive.com/");
 	  }
 

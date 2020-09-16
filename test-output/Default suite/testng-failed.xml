@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="docker.SleniumwithChrome">
+      <class name="docker.ChromeTest">
         <methods>
-          <include name="grid2"/>
-          <include name="grid1"/>
+          <include name="afterTest"/>
+          <include name="beforeClass"/>
+          <include name="f3"/>
         </methods>
-      </class> <!-- docker.SleniumwithChrome -->
+      </class> <!-- docker.ChromeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

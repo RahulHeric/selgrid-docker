@@ -26,6 +26,7 @@ public class FirefoxTest {
 	        
 	        driver=new RemoteWebDriver(url,fop);
 	        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+	        System.out.println(driver.toString());
 	        driver.get("https://opensource-demo.orangehrmlive.com/");
 	  }
 
