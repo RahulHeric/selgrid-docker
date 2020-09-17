@@ -33,7 +33,7 @@ public class FirefoxTest {
 
  @Test
  public void f() {
-	 System.out.println("title of page : "+driver.findElement(By.id("logInPanelHeading")).getText());
+	 System.out.println("title of page :"+driver.findElement(By.id("logInPanelHeading")).getText());
 
  }
 @Test
