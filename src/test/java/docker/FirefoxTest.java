@@ -27,31 +27,34 @@ public class FirefoxTest {
 	        driver=new RemoteWebDriver(url,fop);
 	        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	        System.out.println(driver.toString());
-	        driver.get("https://opensource-demo.orangehrmlive.com/");
+	        driver.get("https://s2.demo.opensourcecms.com/orangehrm/symfony/web/index.php/auth/login");
+
 	  }
 
  @Test
  public void f() {
-	  System.out.println("title of page: "+driver.getTitle());
+	 System.out.println("title of page: "+driver.findElement(By.id("logInPanelHeading")).getText());
+
  }
 @Test
 public void f2() {
-	 driver.findElement(By.id("txtUsername")).sendKeys("Admin");
-	 driver.findElement(By.id("txtPassword")).sendKeys("admin123");
-	 driver.findElement(By.id("btnLogin")).click();
-	 String url= driver.getCurrentUrl();
-	 System.out.println("Current page url is : "+url);
+	driver.findElement(By.id("txtUsername")).sendKeys("opensourcecms");
+    driver.findElement(By.id("txtPassword")).sendKeys("opensourcecms");
+    driver.findElement(By.id("btnLogin")).click();
+    String url= driver.getCurrentUrl();
+    System.out.println("Current page url is : "+url);
 }
 @Test
 public void f3() throws InterruptedException{
-	 driver.findElement(By.xpath("//*[@id=\"menu_dashboard_index\"]/b")).click();
-	 String txt=driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/h1")).getText();
-	 if(txt=="Dashboard") {
-		 System.out.println("Page exist");
-	 }
-	 else {
-		 System.out.println("page not exist");
-	 }
+	driver.findElement(By.xpath("//*[@id=\"option-menu\"]/li[3]/a")).click();
+    
+    if(driver.findElement(By.id("frmLogin")).isDisplayed()) {
+        System.out.println("Logged out successfully");
+        
+    }
+    else {
+        System.out.println("logout unsuccessfull");
+    }
 	 
 }
  @AfterTest
